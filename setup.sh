@@ -24,7 +24,7 @@ sudo apt-get install -y rlwrap
 # Install emacs24
 # https://launchpad.net/~cassou/+archive/emacs
 sudo apt-add-repository -y ppa:cassou/emacs
-sudo apt-get -qq update
+sudo apt-get -q update
 sudo apt-get install -y emacs24-nox emacs24-el emacs24-common-non-dfsg
 
 # Install Heroku toolbelt
@@ -39,10 +39,15 @@ fi
 if [ -d .emacs.d/ ]; then
     mv .emacs.d .emacs.d~
 fi
-git clone https://github.com/startup-class/dotfiles.git
+git clone https://github.com/cmeon/dotfiles.git
 ln -sb dotfiles/.screenrc .
 ln -sb dotfiles/.bash_profile .
 ln -sb dotfiles/.bashrc .
 ln -sb dotfiles/.bashrc_custom .
 ln -sf dotfiles/.emacs.d .
 
+# Install ec2-api-tools from Amazon Ubuntu reposities
+sudo apt-add-repository ppa:awstools-dev/awstools
+sudo sed -i~ -e 's/# deb\(.*\)multiverse/deb\1multiverse/g' /etc/apt/sources.list
+sudo apt-get update
+sudo apt-get -q install ec2-api-tools
