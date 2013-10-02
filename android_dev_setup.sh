@@ -35,4 +35,9 @@ EOF
 
 fi
 
+if [ ! -f ~/.emacs.d/android-mode.el ]; then
+    wget https://raw.github.com/cmeon/android-mode/master/android-mode.el
+    mv android-mode.el ~/.emacs.d
+fi
+
 android
