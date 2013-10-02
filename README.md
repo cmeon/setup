@@ -16,6 +16,9 @@ See also http://github.com/startup-class/dotfiles and
 for more details.
 
 
+android_dev_setup.sh
+====================
+Run this file to install or update Android SDK.
 
 
 
