@@ -27,9 +27,9 @@ sudo apt-add-repository -y ppa:cassou/emacs
 sudo apt-get -qq update
 sudo apt-get install -y emacs24-nox emacs24-el emacs24-common-non-dfsg
 
-# Install Heroku toolbelt
-# https://toolbelt.heroku.com/debian
-wget -qO- https://toolbelt.heroku.com/install-ubuntu.sh | sh
+## Install Heroku toolbelt
+## https://toolbelt.heroku.com/debian
+#wget -qO- https://toolbelt.heroku.com/install-ubuntu.sh | sh
 
 # git pull and install dotfiles as well
 cd $HOME
@@ -46,3 +46,8 @@ ln -sb dotfiles/.bashrc .
 ln -sb dotfiles/.bashrc_custom .
 ln -sf dotfiles/.emacs.d .
 
+## Install ec2-api-tools from Amazon Ubuntu reposities
+#sudo apt-add-repository ppa:awstools-dev/awstools
+#sudo sed -i~ -e 's/# deb\(.*\)multiverse/deb\1multiverse/g' /etc/apt/sources.list
+#sudo apt-get update
+#sudo apt-get -q install ec2-api-tools
