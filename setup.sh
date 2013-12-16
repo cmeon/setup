@@ -46,8 +46,3 @@ ln -sb dotfiles/.bashrc .
 ln -sb dotfiles/.bashrc_custom .
 ln -sf dotfiles/.emacs.d .
 
-# Install ec2-api-tools from Amazon Ubuntu reposities
-sudo apt-add-repository ppa:awstools-dev/awstools
-sudo sed -i~ -e 's/# deb\(.*\)multiverse/deb\1multiverse/g' /etc/apt/sources.list
-sudo apt-get update
-sudo apt-get -q install ec2-api-tools
